@@ -1,0 +1,17 @@
+// reset
+@import "./config/tipo";
+@import "./config/colors";
+@import "./config/reset";
+//layout 
+@import "./layout/completo";
+@import "./layout/grid-container";
+@import "./layout/cabeza";
+@import "./layout/menu";
+@import "./layout/titulo";
+@import "./layout/cuerpo";
+@import "./layout/buttonredes";
+@import "./layout/pie";
+// media queries
+@import "./layout/mediaq768";
+@import "./layout/mediaq480";
+@import "./layout/mediaq800";

@@ -1,42 +1,46 @@
-console.log ("Bienvenido a carga de Alumnos")
+const alumnos = []
 
-const alumnos = [];
+class Alumno {
+    static id = 0
+    constructor (nombre, apellido, sexo, edad, peso, altura) {
+        this.id = ++Alumno.id,
+        this.nombre = nombre
+        this.apellido = apellido
+        this.sexo = sexo
+        this.edad = edad
+        this.peso = peso
+        this.altura = altura
+    }
+}
 
-// La fórmula para calcular el índice de masa corporal (IMC) es IMC = peso (kg) / estatura (m)*2
-function imc(peso , altura){
-    return peso / ((altura/100) ** 2);
-};
-
-// La formula para medir el índice cintura-cadera (ICC) es ICC = perímetro de la cintura / perímetro de la cadera
-function icc(cintura , cadera){
-    return cintura / cadera;
-};
-
-function saludo(nombre, apellido) {
-    alert("Bienvenido "+ nombre + " " + apellido);
-};
-
-let continuar = true
-while (continuar) {
+const cargarDatosUsuarios = () =>{
     let nombre = prompt("Ingrese su nombre: ");
     let apellido = prompt("Ingrese su apellido: ");
-    saludo(nombre, apellido)
     let sexo = prompt("Indique su sexo segun del dni (m/f): ")
     let edad = parseInt(prompt("Ingrese su edad: "));
     let peso = parseInt(prompt ("Ingrese su peso: "));
     let altura = parseInt(prompt("Ingrese su altura (en centimetros): "));
+    
+    const alumno = new Alumno (nombre, apellido, sexo, edad, peso, altura)
+    alumnos.push(alumno)
 
-    imc(peso , altura);
-    let resultadoImc = imc(peso, altura);
-        // Interpretación de los resultados
-        // El IMC es una manera estándar de determinar si una persona tiene un peso adecuado en relación a su estatura. 
-        // Los rangos de IMC son: 
-        // Bajo: menos de 18.5
-        // Normal: 18.5 – 24.9
-        // Sobrepeso: 25.0 – 29.9
-        // Obesidad : mas de 30.0     
-    console.log ("Tu Indice de Masa Corporal es: "+ resultadoImc);
+    const alumnosJSON = JSON.stringify(alumnos)
+    localStorage.setItem("alumnos", alumnosJSON)
+    const alumnosNuevo = JSON.parse(localStorage.getItem("alumnos"))
+    console.log(alumnosNuevo)
+}
 
+const buscarAlumnos = () => {
+    if (alumnos.length === 0) {
+        alert("No hay alumnos agregados")
+    } else {
+        let apellidoAlumno = prompt("Ingrese el apellido a buscar: ")
+        const busqueda = alumnos.filter (alumno => alumno.apellido == apellidoAlumno)
+        console.log(busqueda)
+    }
+}
+
+function informarIMC (resultadoImc) {
     if (resultadoImc < 18.5) {
         alert("Tienes un indice de masa corporal BAJO");
     } else if (18.6 < resultadoImc < 24.9) {
@@ -46,19 +50,11 @@ while (continuar) {
     } else {
         alert("Tienes un indice de masa corporal OBESIDAD")
     };
+    console.log ("Tu Indice de Masa Corporal es: "+ resultadoImc);
+}
 
-    let cintura = parseInt(prompt("Ingrese la medida de la cintura (en centimetros): "))
-    let cadera = parseInt(prompt("Ingrese la medida de la cadera (en centimetros): "))
-    
-    icc(cintura, cadera);
-    let resultadoIcc = icc(cintura, cadera);
-    
-        // Clasificación	    Hombres (ICC)	Mujeres (ICC)
-        // Bajo riesgo	        < 0.9	        < 0.85
-        // Riesgo moderado	    0.9 – 1.0	    0.85 – 0.9
-        // Alto riesgo	        > 1.0	        > 0.9
+function informarICC (sexo, resultadoIcc) {
     console.log ("Tu Indice Cintura-Cadera es: "+ resultadoIcc);
-
     if (sexo == "m"){
         if (resultadoIcc < 0.89) {
             alert("Tienes un indice cintura/cadera de BAJO RIESGO");
@@ -77,16 +73,46 @@ while (continuar) {
         };
     } else {
         alert("El dato del sexo era necesario para el resultado del ICC")
-    }
-
-    alumnos.push({
-        nombre, apellido, edad, peso, altura, resultadoImc, resultadoIcc,
-    });
-
-    let confirmacion = prompt("Desea hacer otra carga? (si/no)")
-    if ( confirmacion == "no") {
-        continuar = false
-        console.log("Muchas gracias")
-    }
+    };
 }
-console.log(alumnos)
+
+let menu = parseInt(prompt("Ingrese: \n1 para cargar alumno \n2 para ver alumno \n3 calcular el Indice Masa Corporal \n4 calcular el Indice Cintura Cadera \n5 para salir:"))
+
+while(menu !==5) {
+    switch(menu) {
+        case 1:
+            cargarDatosUsuarios()
+            break
+        case 2:
+            buscarAlumnos()
+            break
+        case 3:
+            let peso = parseInt(prompt ("Ingrese su peso: "))
+            let altura = parseInt(prompt("Ingrese su altura (en centimetros): "))
+
+            indiceMC = (a, b) => {
+                return a / ((b/100) ** 2)
+            }
+
+            const resultadoImc = indiceMC(peso, altura);
+            informarIMC(resultadoImc)
+            break
+        case 4:
+            let sexo = prompt("Indique su sexo segun del dni (m/f): ")
+            let cintura = parseInt(prompt("Ingrese la medida de la cintura (en centimetros): "))
+            let cadera = parseInt(prompt("Ingrese la medida de la cadera (en centimetros): "))
+
+            indiceCC = (a, b) => {
+                return a / b;
+            }
+
+            const resultadoIcc = indiceCC(cintura, cadera);
+            informarICC(sexo, resultadoIcc)
+            break
+        default:
+            alert("Opcion invalidad")
+    }
+    menu = parseInt(prompt("Ingrese: \n1 para cargar alumno \n2 para ver alumno \n3 calcular el Indice Masa Corporal \n4 calcular el Indice Cintura Cadera \n5 para salir:"))
+}
+// console.log(alumnos)
+// localStorage.clear()

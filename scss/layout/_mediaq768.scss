@@ -1,0 +1,119 @@
+@media (max-width: 768px){
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 0.2fr 1fr 0.5fr 0.04fr;
+        grid-template-areas: 
+        "portada portada  "
+        "nucleo nucleo "
+        "nucleo nucleo "
+        " final    final   "   
+        ;
+    }
+    .portada {
+        .navbar {
+            justify-content: space-between;
+            height: 3.5em;
+            li {
+                padding: 0.5em;
+                a {
+                    color: map-get($color-bg , black-subti );
+                    text-decoration:overline;
+                    font-weight: 650;
+                }
+            }
+            &-brand{
+                padding-top: 0em;
+                height: 2em;
+                .logo {
+                    height: 2.4em;
+                    padding-top: 0em;
+                }
+            }
+            ul {
+                flex-direction: column-reverse;
+            }
+        }
+        .titulo {
+            h3 {
+                padding: 0.8em;
+                font-size: 1.2em; 
+            }   
+        } 
+    }
+    .nucleo {
+        .subtitulos {
+            padding: 1.8em;
+            font-size: 1.6em;
+        }
+        .articulos-lectura {
+            display: inline-block;
+            background-color: map-get($color-bg , violet-768 );
+            padding-left: 2em;
+            padding-right: 2em;
+            .row {
+                .col {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .card {
+                        width: 80%;
+                        .articulo {
+                            width: 100%;
+                        }
+                    }                
+                } 
+            }          
+        }   
+        .articulos-videos {
+            .articulo {
+                width: 80%; 
+            }
+        }
+        .formulario {
+            .comun {
+                width: 40em;
+            }
+            .email {
+                width: 40em;
+            }
+            .largo {
+                width: 40em;
+            }
+        }
+    }
+    .final {
+        .menu-final { 
+            height: 1.6em;
+            .logo{
+                size: 1em;
+                height: 1.5em ;
+            }
+            .link {
+                margin-bottom: 00em;
+                li {
+                    padding: 0.5em;
+                    margin-bottom: 0px;
+                }
+            } 
+            .redes {
+                .wrapper {
+                    .icon{
+                        margin: 0.2em;
+                        padding: 0.01em 0.4em;
+                        width: 1.6em;
+                        height: 1.6em;
+                        line-height: 1.6em;
+                        font-size: 1em;
+                        margin-top: 1.2em;;
+                        &:hover {
+                            .tooltip {
+                            top: -1.8em;
+                            }
+                        }
+                    }
+                }
+            } 
+        }
+    }
+}

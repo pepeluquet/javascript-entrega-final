@@ -1,0 +1,21 @@
+{
+  "name": "3da-entrega-inayoga",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",    
+    "pepe": "sass --watch scss/main.scss css/main.css"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pepeluquet/2da-Entrega-InaYoga.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pepeluquet/2da-Entrega-InaYoga/issues"
+  },
+  "homepage": "https://github.com/pepeluquet/2da-Entrega-InaYoga#readme",
+  "description": ""
+}

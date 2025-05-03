@@ -1,0 +1,11 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ;
+    grid-template-rows: 0.3fr 1fr 0.1fr 0.01fr;
+    grid-template-areas: 
+            "portada  portada  portada"
+            "nucleo  nucleo  nucleo"
+            "nucleo  nucleo  nucleo"
+            " final     final     final"    
+    ;
+}

@@ -1,0 +1,41 @@
+.final {
+    grid-area: final;
+    .registro {
+        background-color: map-get($color-bg , musgo-menu );
+    }
+    .menu-final {
+        display: flex;
+        justify-content: space-around; 
+        height: 2.5em;
+        align-items: center;
+        background-color: map-get($color-bg , musgo-menu );
+        .link {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            li {
+                padding: 1.0em;
+                a {
+                    text-decoration: overline;
+                    color: map-get($color-bg , white-menu );
+                    font-weight: 650;
+                }
+            }
+        }
+        .logo{
+            height: 2.5em ;
+        }
+        .redes {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            li {
+                border-top-width: 20px;
+                padding-top: 20px;
+                img {
+                    width: 50px;
+                }
+            }
+        }
+    }
+}

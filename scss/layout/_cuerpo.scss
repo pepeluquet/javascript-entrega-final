@@ -1,0 +1,79 @@
+.nucleo {
+    display: flex;
+    flex-direction: column;
+    grid-area: nucleo;
+    background-color: map-get($color-bg , white-titulo );
+    .subtitulos {
+        color: map-get($color-bg , black-subti );
+        font-family: map-get($txt-title , title-subti );
+        text-align: center;
+        padding: 2.2em;
+        font-size: 1.7em;
+    }
+    .articulos-lectura {
+        justify-content: space-around;
+        background-color: map-get($color-bg , tierra-nucleo );
+        padding-top: 2em;
+        padding-bottom: 2em;
+        display:inline-flex;
+        flex-direction: row;
+        align-items: center;
+        .articulo-info {
+            background-color: map-get($color-bg , white-titulo );
+            border-radius: 0.5em;
+        }
+        .parrafo-info {
+            width: 100%;
+            align-items: center;
+            padding: 2em;
+            margin: 2em;
+            font-size: 1.2em;
+        }
+    }
+    .carousel {
+        background-color: map-get($color-bg , white-titulo );
+        background-position: center;
+        border-radius: 0.5em;
+        margin: 1em;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    .articulos-videos {
+        justify-content: space-around;
+        background-color: map-get($color-bg , tierra-nucleo );
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+    .articulos-lectura-blog {
+        display:inline-flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background-color: map-get($color-bg , tierra-nucleo );
+        justify-content: space-around;
+        padding-top: 2em;
+        padding-left: 1em;
+        padding-bottom: 2em;
+        padding-right: 1em;
+        .card{
+            margin-left: 1em;
+            margin-right: 1em;
+        }}
+    .formulario {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-around ;
+        align-items: flex-start;
+        background-color: map-get($color-bg , tierra-nucleo );
+        padding-top: 2em;
+        padding-bottom: 2em;
+        .comun {
+            width: 20em;
+        }
+        .email {
+            width: 30em;
+        }
+        .largo {
+            width: 50em;
+        }
+    }
+}

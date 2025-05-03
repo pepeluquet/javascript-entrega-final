@@ -1,0 +1,105 @@
+.portada {
+    .tracking-in-contract {
+        animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        color: map-get($color-bg , violet-title );
+        font-size: 3.5em  
+    }
+    @-webkit-keyframes tracking-in-contract {
+        0% {
+        letter-spacing: 1em;
+        opacity: 0;
+        }
+        40% {
+        opacity: 0.6;
+        }
+        100% {
+        letter-spacing: normal;
+        opacity: 1;
+        }
+    }
+    @keyframes tracking-in-contract {
+        0% {
+        letter-spacing: 1em;
+        opacity: 0;
+        }
+        40% {
+        opacity: 0.6;
+        }
+        100% {
+        letter-spacing: normal;
+        opacity: 1;
+        }
+    }
+    .titulo {
+        display: flex;
+        flex-direction: column;
+        background-color: map-get($color-bg , white-titulo );
+        font-family: map-get($txt-title , title-prin );
+        text-align: center;
+        background-image: url(../assets/foto1.webp);
+        background-position: center;
+        background-size: cover;
+        height: 30em;
+        h3 {
+            color: map-get($color-bg , black-subti );
+            font-family: map-get($txt-title , title-secu );
+            text-align: center;
+            padding: 1em;
+            font-size: 1.8em; 
+        }
+    }
+    .titulo-info {
+        background-image: url(../assets/foto7.webp);
+        display: flex;
+        flex-direction: column;
+        background-color: map-get($color-bg , white-titulo );
+        font-family: map-get($txt-title , title-prin );
+        text-align: center;
+        background-position: center;
+        background-size: cover;
+        height: 30em;
+        h3 {
+            color: map-get($color-bg , black-subti );
+            font-family: map-get($txt-title , title-secu );
+            text-align: center;
+            padding: 1em;
+            font-size: 1.8em; 
+        }
+    }
+    .titulo-blog {
+        background-image: url(../assets/foto5.webp);
+        display: flex;
+        flex-direction: column;
+        background-color: map-get($color-bg , white-titulo );
+        font-family: map-get($txt-title , title-prin );
+        text-align: center;
+        background-position: center;
+        background-size: cover;
+        height: 30em;
+        h3 {
+            color: map-get($color-bg , black-subti );
+            font-family: map-get($txt-title , title-secu );
+            text-align: center;
+            padding: 1em;
+            font-size: 1.8em; 
+        }
+    }
+    .titulo-contacto {
+        background-image: url(../assets/foto6.webp);
+        display: flex;
+        flex-direction: column;
+        background-color: map-get($color-bg , white-titulo );
+        font-family: map-get($txt-title , title-prin );
+        text-align: center;
+        background-position: center;
+        background-size: cover;
+        height: 30em;
+        h3 {
+            color: map-get($color-bg , black-subti );
+            font-family: map-get($txt-title , title-secu );
+            text-align: center;
+            padding: 1em;
+            font-size: 1.8em; 
+        }
+    }
+}

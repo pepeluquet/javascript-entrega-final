@@ -1,0 +1,96 @@
+.wrapper {
+    .icon{
+        position: relative;
+        background-color: map-get($color-bg , base );
+        border-radius: 50%;
+        margin: 0.3em;
+        padding: 0.1em 0.7em;
+        width: 2.3em;
+        height: 2.3em;
+        line-height: 2.1em;
+        font-size: 1.2em;
+        display: inline-block;
+        margin-top: 1.5em;
+        align-items: center;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        color: #333;
+        text-decoration: none;
+        &:hover {
+            .tooltip {
+            top: -2.8em;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            }
+            span,
+            .tooltip {
+                text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+    .tooltip {
+        position: absolute;
+        top: 0;
+        line-height: 1.2em;
+        font-size: 1em;
+        background-color: map-get($color-bg , base );
+        color: map-get($color-bg , base );
+        padding: 0.5em 1em;
+        border-radius: 1.5em;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        &::before {
+            position: absolute;
+            content: "";
+            height: 0.5em;
+            width: 0.5em;
+            background-color: map-get($color-bg , base );
+            bottom: -0.2em;
+            left: 35%;
+            transform: translate(-50%) rotate(45deg);
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+    }
+    .facebook {
+        &:hover {
+            background-color: map-get($color-bg , face );
+            color: map-get($color-bg , base );
+            .tooltip {
+                background-color: map-get($color-bg , face );
+                color: map-get($color-bg , base );
+                &::before {
+                    background-color: map-get($color-bg , face );
+                }
+            }            
+        }
+    }
+    .instagram {
+        &:hover {
+            background-color: map-get($color-bg , instagram );
+            color: map-get($color-bg , base );
+            .tooltip {
+                background-color: map-get($color-bg , instagram );
+                color: map-get($color-bg , base );
+                &::before {
+                    background-color: map-get($color-bg , instagram );
+                }
+            }            
+        }
+    }
+    .youtube {
+        &:hover {
+            background-color: map-get($color-bg , youtube );
+            color: map-get($color-bg , base );
+            .tooltip {
+                background-color: map-get($color-bg , youtube );
+                color: map-get($color-bg , base );
+                &::before {
+                    background-color: map-get($color-bg , youtube );
+                }
+            }            
+        }
+    }
+}
