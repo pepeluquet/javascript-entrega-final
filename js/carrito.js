@@ -1,14 +1,16 @@
-let cartStorage = localStorage.getItem("cartProducts")
-cartStorage = JSON.parse(cartStorage)
+let carritoContainer = document.getElementById("carrito-section")
 
-let cartContainer = document.getElementById("cart-section")
+let carritoStorage = localStorage.getItem("carritoProductos")
+carritoStorage = JSON.parse(carritoStorage)
 
-function renderCarrito(cartItems) {
-    cartItems.forEach(producto => {
-        const cart = document.createElement("div")
-        cart.innerHTML = `<h3>${producto.nombre}</h3>
-                          <p>${producto.precio}</p>`
-        cartContainer.appendChild(cart)
+
+function renderCarrito(carritoItems) {
+    carritoItems.forEach(producto => {
+        const carrito = document.createElement("div")
+        carrito.innerHTML = `   <h4 class="card-title">${producto.nombre}</h4>
+                                <h4 class="card-title">$ ${producto.precio}.</h4>`
+        carritoContainer.appendChild(carrito)
     })
+    console.log(carritoProductos)
 }
-renderCarrito(cartStorage)
+renderCarrito(carritoStorage)

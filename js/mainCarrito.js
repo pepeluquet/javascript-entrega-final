@@ -34,27 +34,27 @@ function renderProductos(productosArray) {
                                         <h4 class="card-title">${producto.nombre}</h4>
                                         <p class="card-text">${producto.descripcion}</p>
                                         <h4 class="card-title">$ ${producto.precio}.</h4>
-                                        <button class="btn btn-light" id="${producto.precio}">Agregar</button>
+                                        <button class="btn btn-light" id="${producto.id}">Agregar</button>
                                     </div>
                                 </div>
                             </article>`
         productosContainer.appendChild(card)
     })
-    addToCartButton()
+    agregarCarritoButton()
 }
 renderProductos(productos)
 
 
-function addToCartButton () {
-    addButton = document.querySelectorAll(".productoAgregar")
-    addButton.forEach(button => {
+function agregarCarritoButton () {
+    agregarButton = document.querySelectorAll(".btn")
+    agregarButton.forEach(button => {
         button.onclick = (e) => {
-            const productId = e.currentTarget.id
-            const selecterProducts = productos.find(producto => producto.id == productId)
-            cartProducts.push(selecterProducts)
-            console.log(cartProducts)
+            const productoId = e.currentTarget.id
+            const seleccionProductos = productos.find(producto => producto.id == productoId)
+            carritoProductos.push(seleccionProductos)
+            console.log(carritoProductos)
 
-            localStorage.setItem("cartProducts", JSON.stringify(cartProducts))
+            localStorage.setItem("carritoProductos", JSON.stringify(carritoProductos))
         }
     })
 }
