@@ -10,7 +10,7 @@ function renderCarrito(carritoItems) {
             carrito.innerHTML = `   <div class="card">
                                         <div class="card-img-overlay">
                                             <h4 class="card-title">${producto.nombre}</h4>
-                                            <h4 class="card-title">$ ${producto.precio}.</h4>
+                                            <h4 class="card-title">$ ${producto.precio}</h4>
                                             <button class="btn btn-light" id="${producto.id}">Eliminar</button>
                                         </div>
                                     </div>`
