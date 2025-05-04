@@ -56,7 +56,9 @@
   color: #809671;
   font-weight: 650;
 }
-
+.navbar-brand .carrito {
+  height: 2em;
+}
 .portada .tracking-in-contract {
   animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   color: #725C3A;

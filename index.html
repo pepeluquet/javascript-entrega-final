@@ -22,6 +22,7 @@
     <!-- link JSs -->
     <script defer src="./js/mainImc.js"></script>
     <script defer src="./js/mainIcc.js"></script>
+    <script defer src="./js/mainCarrito.js"></script>
     <!-- Font Awesome 5.15.1 CSS -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
     <!-- ponemos el titulo de la pestaña -->
@@ -55,6 +56,9 @@
                             </li>
                         </ul>
                     </div>
+                    <a class="navbar-brand" href="./html/carrito.html" id="carrito">
+                        <img class="carrito" src="./assets/shopping-cart.png" alt="carrito de compras"><span id="cuenta-carrito">0</span>
+                    </a>
                 </nav>
                 <!-- Sección de título -->
                 <section class="titulo">
@@ -64,38 +68,8 @@
             </header>
             <main class="nucleo grid-setter">
                 <h3 class="subtitulos">"Conecta nucleo y mente con el equilibrio perfecto"</h3>
-                <section class="articulos-lectura"> 
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <article class="col">
-                            <div class="card">
-                                <img src="./assets/foto2.webp" class="articulo" alt="Saludo al sol en la playa">
-                                <div class="card-img-overlay">
-                                    <h4 class="card-title">Postura de la Cobra.</h4>
-                                    <p class="card-text">Fortalece la espalda, abre el pecho y mejora la flexibilidad.</p>
-                                    <a href="./html/blog.html" class="btn btn-light">ver mas</a>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="col">
-                            <div class="card">
-                                <img src="./assets/foto3.webp" class="articulo" alt="Yoga en la playa">
-                                <div class="card-img-overlay">
-                                    <h4 class="card-title">Postura del Gato con Extensión de Pierna.</h4>
-                                    <p class="card-text">Mejora el equilibrio, fortalece el core y estabiliza la columna.</p>
-                                    <a href="./html/blog.html" class="btn btn-light">ver mas</a>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="col">
-                            <div class="card">
-                                <img src="./assets/foto4.webp" class="articulo" alt="Yoga en la playa">
-                                <div class="card-img-overlay">
-                                    <h4 class="card-title">Postura del Guerrero II.</h4>
-                                    <p class="card-text">Fortalece piernas, abre caderas y mejora la concentración.</p>
-                                    <a href="./html/blog.html" class="btn btn-light">ver mas</a>
-                                </div>
-                            </div>
-                        </article>
+                <section class="articulos-container"> 
+                    <div class="row row-cols-1 row-cols-md-3 g-4" id="productos-container">
                 </section>                          
                 <h3 class="subtitulos">"Conocete"</h3>
                 <section class="articulos-lectura"> 

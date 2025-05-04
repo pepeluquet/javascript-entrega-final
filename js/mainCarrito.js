@@ -1,40 +1,44 @@
 const productos= [
     {
         id: 1, 
-        nombre: "televisor", 
-        precio: 5000
+        nombre: "Estiramientos dinámicos para atletas.", 
+        descripcion: "Este libro se centra en los estiramientos dinámicos que son útiles para el rendimiento deportivo.",
+        precio: 12000,
+        imagen : "./assets/foto2.webp"
     },
     {
         id: 2, 
-        nombre: "lavarropas", 
-        precio: 8000
+        nombre: "Clases de Yoga y Stretching para hacer en sus casas", 
+        descripcion: "8 videos con clases destinadas para realizar en la comodidad de sus casas y en el tiempo que deseen.",
+        precio: 20000,
+        imagen : "./assets/foto3.webp"
     },
     {
         id: 3, 
-        nombre: "microondas", 
-        precio: 2000
-    },
-    {
-        id: 4, 
-        nombre: "secadora", 
-        precio: 4000
-    },
-    {
-        id: 5, 
-        nombre: "cocina", 
-        precio: 13000
+        nombre: "subscripcion", 
+        descripcion: "Subscripcion mensual a clases en vivo.",
+        precio: 18000,
+        imagen : "./assets/foto4.webp"
     },
 ]
-let cartProducts = []
-let productsContainer = document.getElementById("products-container")
+let carritoProductos = []
+let productosContainer = document.getElementById("productos-container")
 
-function renderProductos(productsArray) {
-    productsArray.forEach(producto => {
+function renderProductos(productosArray) {
+    productosArray.forEach(producto => {
         const card = document.createElement("div")
-        card.innerHTML = `<h3>${producto.nombre}</h3>
-                          <p>$${producto.precio}</p>
-                          <button class="productoAgregar" id="${producto.id}">Agregar</button>`
-        productsContainer.appendChild(card)
+        card.innerHTML = `  <article class="col">
+                                <div class="card">
+                                    <img src=${producto.imagen} class="articulo">
+                                    <div class="card-img-overlay">
+                                        <h4 class="card-title">${producto.nombre}</h4>
+                                        <p class="card-text">${producto.descripcion}</p>
+                                        <h4 class="card-title">$ ${producto.precio}.</h4>
+                                        <button class="btn btn-light" id="${producto.precio}">Agregar</button>
+                                    </div>
+                                </div>
+                            </article>`
+        productosContainer.appendChild(card)
     })
     addToCartButton()
 }
