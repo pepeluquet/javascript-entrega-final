@@ -51,18 +51,15 @@ function agregarCarritoButton () {
     agregarButtones.forEach(button => {
         button.onclick = (e) => {
             const productoId = e.currentTarget.id
-            const seleccionProductos = productos.find(producto => producto.id === productoId)
+            const seleccionProductos = productos.find(producto => producto.id == productoId)
             
-            const productoExistente = carritoProductos.find(item => item.id === productoId)
+            const productoExistente = carritoProductos.find(item => item.id == productoId)
             if (productoExistente) {
                 productoExistente.cantidad++
             } else {
                 const nuevoProductoEnCarrito = { ...seleccionProductos, cantidad: 1 }
                 carritoProductos.push(nuevoProductoEnCarrito)
             }
-
-
-            console.log(carritoProductos)
 
             localStorage.setItem("carritoProductos", JSON.stringify(carritoProductos))
             renderCarrito(carritoProductos)

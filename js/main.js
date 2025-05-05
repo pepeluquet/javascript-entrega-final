@@ -18,29 +18,7 @@ carritoStorage = JSON.parse(carritoStorage) || []
 
 // --- FIN MODIFICACIÓN ---
 
-function renderCarrito(carritoItems) { 
-    carritoContainer.innerHTML = "" 
 
-    carritoItems.forEach(producto => { 
-        if (producto.cantidad > 0) { 
-            const carritoItemDiv = document.createElement("div") 
-            const subtotal = producto.precio * producto.cantidad 
-
-            carritoItemDiv.innerHTML = `
-                ${producto.nombre} 
-                Precio: $${producto.precio} 
-                Cantidad: ${producto.cantidad} 
-                Subtotal: $${subtotal} 
-                <button class="eliminar-btn" data-id="${producto.id}">Eliminar</button> // <-- Añadimos data-id para identificar el producto
-            ` 
-
-            carritoContainer.appendChild(carritoItemDiv) 
-        }
-    })
-
-    console.log(carritoProductos) 
-
-renderCarrito(carritoStorage) // 
 
 // 2. Código para dar funcionalidad al botón "Eliminar"
 // En el script carrito.js, actualmente el botón "Eliminar" se crea dentro de la función renderCarrito, pero no tiene ninguna acción asociada a su evento onclick.

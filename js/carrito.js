@@ -26,5 +26,23 @@ function renderCarrito(carritoItems) {
         }
     })
     console.log(carritoProductos)
+    
 }
 renderCarrito(carritoStorage)
+
+const vaciarCarritoButton = document.getElementById("vaciar-carrito-btn")
+
+function vaciarCarrito () { 
+    vaciarCarritoButton.addEventListener('click', () => {
+        console.log("click")
+        carritoProductos = []
+
+        localStorage.setItem("carritoProductos", JSON.stringify(carritoProductos))
+
+        renderCarrito(carritoProductos)
+
+    })
+}
+
+
+// localStorage.clear()
