@@ -6,10 +6,7 @@ Este proyecto comenzo en papeles la primer semana como una **calculadora de Indi
 
 El simulador permite al usuario ingresar la siguiente información:
 
-*   Nombre
-*   Apellido
 *   Sexo (para el cálculo del ICC)
-*   Edad
 *   Peso (en kilogramos)
 *   Altura (en centímetros)
 *   Perímetro de la cintura (en centímetros)
@@ -20,7 +17,6 @@ Una vez ingresados los datos, el simulador calcula y muestra:
 *   **El valor del IMC**, junto con una **interpretación del resultado** (bajo peso, normal, sobrepeso, obesidad).
 *   **El valor del ICC**, junto con una **clasificación de riesgo** (bajo, moderado, alto) basada en el sexo del usuario.
 
-Los datos de cada cálculo realizado se almacenan en un array de alumnos. El simulador pregunta al usuario si desea realizar otra carga de datos.
 
 ## Notas
 

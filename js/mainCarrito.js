@@ -21,8 +21,8 @@ const productos= [
         imagen : "./assets/foto4.webp"
     },
 ]
-let carritoProductos = JSON.parse(localStorage.getItem("carritoProductos")) || []
 
+let carritoProductos = JSON.parse(localStorage.getItem("carritoProductos")) || []
 let productosContainer = document.getElementById("productos-container")
 
 function renderProductos(productosArray) {
@@ -50,10 +50,10 @@ function agregarCarritoButton () {
     const agregarButtones = document.querySelectorAll(".btn")
     agregarButtones.forEach(button => {
         button.onclick = (e) => {
-            const productoId = e.currentTarget.id
-            const seleccionProductos = productos.find(producto => producto.id == productoId)
-            
-            const productoExistente = carritoProductos.find(item => item.id == productoId)
+            const productoId = parseInt(e.currentTarget.id)
+            const seleccionProductos = productos.find(producto => producto.id === productoId)            
+            const productoExistente = carritoProductos.find(item => item.id === productoId)
+
             if (productoExistente) {
                 productoExistente.cantidad++
             } else {
@@ -67,17 +67,5 @@ function agregarCarritoButton () {
     })
 }
 
-// carritoContainer.addEventListener('click', (e) => {
-//     if (e.target.tagName === 'BUTTON' && e.target.classList.contains('eliminar-btn')) {
-//         const productoIdAEliminar = e.target.dataset.id
 
-//         let carritoActual = JSON.parse(localStorage.getItem("carritoProductos")) || []
-
-//         const nuevoCarrito = carritoActual.filter(item => item.id != productoIdAEliminar)
- 
-//         localStorage.setItem("carritoProductos", JSON.stringify(nuevoCarrito)); 
-
-//         renderCarrito(nuevoCarrito)
-//     }
-// })
 
