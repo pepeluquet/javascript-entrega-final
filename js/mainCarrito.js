@@ -70,4 +70,17 @@ function agregarCarritoButton () {
     })
 }
 
+// carritoContainer.addEventListener('click', (e) => {
+//     if (e.target.tagName === 'BUTTON' && e.target.classList.contains('eliminar-btn')) {
+//         const productoIdAEliminar = e.target.dataset.id
+
+//         let carritoActual = JSON.parse(localStorage.getItem("carritoProductos")) || []
+
+//         const nuevoCarrito = carritoActual.filter(item => item.id != productoIdAEliminar)
+ 
+//         localStorage.setItem("carritoProductos", JSON.stringify(nuevoCarrito)); 
+
+//         renderCarrito(nuevoCarrito)
+//     }
+// })
 
