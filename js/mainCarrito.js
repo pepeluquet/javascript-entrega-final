@@ -21,7 +21,8 @@ const productos= [
         imagen : "./assets/foto4.webp"
     },
 ]
-let carritoProductos = []
+let carritoProductos = JSON.parse(localStorage.getItem("carritoProductos")) || []
+
 let productosContainer = document.getElementById("productos-container")
 
 function renderProductos(productosArray) {
@@ -46,15 +47,25 @@ renderProductos(productos)
 
 
 function agregarCarritoButton () {
-    agregarButton = document.querySelectorAll(".btn")
-    agregarButton.forEach(button => {
+    const agregarButtones = document.querySelectorAll(".btn")
+    agregarButtones.forEach(button => {
         button.onclick = (e) => {
             const productoId = e.currentTarget.id
-            const seleccionProductos = productos.find(producto => producto.id == productoId)
-            carritoProductos.push(seleccionProductos)
+            const seleccionProductos = productos.find(producto => producto.id === productoId)
+            
+            const productoExistente = carritoProductos.find(item => item.id === productoId)
+            if (productoExistente) {
+                productoExistente.cantidad++
+            } else {
+                const nuevoProductoEnCarrito = { ...seleccionProductos, cantidad: 1 }
+                carritoProductos.push(nuevoProductoEnCarrito)
+            }
+
+
             console.log(carritoProductos)
 
             localStorage.setItem("carritoProductos", JSON.stringify(carritoProductos))
+            renderCarrito(carritoProductos)
         }
     })
 }
