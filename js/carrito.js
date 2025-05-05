@@ -1,4 +1,3 @@
-// renderCarrito(carritoStorage)
 let carritoContainer = document.getElementById("carrito-section")
 
 let carritoStorage = localStorage.getItem("carritoProductos")
@@ -8,11 +7,13 @@ carritoStorage = JSON.parse(carritoStorage) || []
 
 function renderCarrito(carritoItems) { 
     carritoContainer.innerHTML = "" 
-
+    let totalGeneral = 0
     carritoItems.forEach(producto => { 
         if (producto.cantidad > 0) { 
             const carritoItemDiv = document.createElement("div") 
             const subtotal = producto.precio * producto.cantidad 
+
+            totalGeneral += subtotal
 
             carritoItemDiv.innerHTML = `
                 ${producto.nombre} 
@@ -25,9 +26,11 @@ function renderCarrito(carritoItems) {
             carritoContainer.appendChild(carritoItemDiv) 
         }
     })
-    console.log(carritoProductos)
-    
+    const totalDiv = document.createElement("div");
+    totalDiv.innerHTML = `<h3>Total de la compra: $${totalGeneral.toFixed}</h3>`
+    carritoContainer.appendChild(totalDiv)
 }
+
 renderCarrito(carritoStorage)
 
 const vaciarCarritoButton = document.getElementById("vaciar-carrito-btn")
@@ -44,5 +47,5 @@ function vaciarCarrito () {
     })
 }
 
-
+// "total-compra"
 // localStorage.clear()
