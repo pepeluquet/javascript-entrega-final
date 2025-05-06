@@ -31,7 +31,7 @@ function renderCarrito(carritoItems) {
 
     const botonesEliminar = carritoContainer.querySelectorAll(".btn-eliminar")
     botonesEliminar.forEach(boton => {
-        boton.addEventListener('click', (e) => {
+        boton.addEventListener("click", (e) => {
             const productoIdAEliminar = parseInt(e.currentTarget.dataset.id)
             carritoProductos = carritoProductos.filter(producto => producto.id !== productoIdAEliminar)
 
@@ -43,16 +43,16 @@ function renderCarrito(carritoItems) {
 
 renderCarrito(carritoStorage)
 
+
 const vaciarCarritoButton = document.getElementById("vaciar-carrito-btn")
 
 function vaciarCarrito () { 
-    vaciarCarritoButton.addEventListener('click', () => {
+    vaciarCarritoButton.addEventListener("click", () => {
 
-        carritoProductos = []
-
-        localStorage.setItem("carritoProductos", JSON.stringify(carritoProductos))
-        console.log(carritoProductos)
-        renderCarrito(carritoProductos)
+        carritoStorage = []
+        localStorage.setItem("carritoProductos", JSON.stringify(carritoStorage))
+        renderCarrito(carritoStorage)
 
     })
 }
+vaciarCarrito ()
