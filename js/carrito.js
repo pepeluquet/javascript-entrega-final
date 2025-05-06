@@ -1,5 +1,4 @@
 let carritoContainer = document.getElementById("carrito-section")
-console.log(carritoContainer)
 let carritoStorage = localStorage.getItem("carritoProductos")
 
 carritoStorage = JSON.parse(carritoStorage) || [] 
@@ -48,11 +47,11 @@ const vaciarCarritoButton = document.getElementById("vaciar-carrito-btn")
 
 function vaciarCarrito () { 
     vaciarCarritoButton.addEventListener('click', () => {
-        console.log("click")
+
         carritoProductos = []
 
         localStorage.setItem("carritoProductos", JSON.stringify(carritoProductos))
-
+        console.log(carritoProductos)
         renderCarrito(carritoProductos)
 
     })
