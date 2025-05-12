@@ -2,7 +2,13 @@ indiceCC = (a, b) => {
     return a / b;
 }
 
+
+const botonesCalculateICC = document.querySelector("calculateICCbutton")
+
+botonesCalculateICC.addEventListener( "click", calculateICC())
+
 function calculateICC() {
+    
     let sexo = document.getElementById("idSexo").value;
     let cintura = document.getElementById("idCintura").value;
     let cadera = document.getElementById("idCadera").value;
@@ -12,7 +18,7 @@ function calculateICC() {
     if (sexo == "m"){
         if (resultadoIcc < 0.89) {
             aviso = "Tienes un indice cintura/cadera de BAJO RIESGO";
-        } else if (0.9 < resultadoIcc < 1.0) {
+        } else if (resultadoIcc > 0.9 && resultadoIcc < 1.0) {
             aviso = "Tienes un indice de cintura/cadera de RIESGO MODERA";
         } else {
             aviso = "Tienes un indice de cintura/cadera de ALTO RIESGO";
@@ -20,7 +26,7 @@ function calculateICC() {
     } else if (sexo == "f"){
         if (resultadoIcc < 0.849) {
             aviso = "Tienes un indice cintura/cadera de BAJO RIESGO";
-        } else if (0.85 < resultadoIcc < 0.9) {
+        } else if (resultadoIcc > 0.85 && resultadoIcc < 0.9) {
             aviso = "Tienes un indice de cintura/cadera de RIESGO MODERA";
         } else {
             aviso = "Tienes un indice de cintura/cadera de ALTO RIESGO";

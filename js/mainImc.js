@@ -10,9 +10,9 @@ function calculateIMC() {
 
     if (resultadoImc < 18.5) {
         aviso = "Tienes un indice de masa corporal BAJO";
-    } else if (18.6 < resultadoImc < 24.9) {
+    } else if (resultadoImc > 18.6 && resultadoImc < 24.9) {
         aviso = "Tienes un indice de masa corporal NORMAL";
-    } else if (25 < resultadoImc < 29.9) {
+    } else if (resultadoImc > 25 && resultadoImc < 29.9) {
         aviso = "Tienes un indice de masa corporal SOBREPESO";
     } else {
         aviso = "Tienes un indice de masa corporal OBESIDAD"
