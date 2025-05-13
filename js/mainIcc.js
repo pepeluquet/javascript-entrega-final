@@ -3,9 +3,9 @@ indiceCC = (a, b) => {
 }
 
 
-const botonesCalculateICC = document.querySelector("calculateICCbutton")
+const botonesCalculateICC = document.querySelector("#btn-calcular-icc")
 
-botonesCalculateICC.addEventListener( "click", calculateICC())
+botonesCalculateICC.addEventListener( "click", calculateICC)
 
 function calculateICC() {
     

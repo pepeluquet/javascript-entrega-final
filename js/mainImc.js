@@ -2,6 +2,11 @@ indiceMC = (a, b) => {
     return a / ((b/100) ** 2)
 }
 
+
+const botonesCalculateIMC = document.querySelector("#btn-calcular-imc")
+
+botonesCalculateIMC.addEventListener( "click", calculateIMC)
+
 function calculateIMC() {
     let peso = document.getElementById("idPeso").value;
     let altura = document.getElementById("idAltura").value;

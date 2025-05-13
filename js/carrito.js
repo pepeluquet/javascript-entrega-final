@@ -55,4 +55,4 @@ function vaciarCarrito () {
 
     })
 }
-vaciarCarrito ()
+// vaciarCarrito ()
