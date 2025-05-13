@@ -44,15 +44,16 @@ function renderCarrito(carritoItems) {
 renderCarrito(carritoStorage)
 
 
-const vaciarCarritoButton = document.getElementById("vaciar-carrito-btn")
+const vaciarCarritoButton = document.getElementById("btn-vaciar-carrito")
+
+vaciarCarritoButton.addEventListener("click", vaciarCarrito )
 
 function vaciarCarrito () { 
-    vaciarCarritoButton.addEventListener("click", () => {
 
-        carritoStorage = []
-        localStorage.setItem("carritoProductos", JSON.stringify(carritoStorage))
-        renderCarrito(carritoStorage)
+    carritoStorage = []
+    localStorage.setItem("carritoProductos", JSON.stringify(carritoStorage))
+    renderCarrito(carritoStorage)
 
-    })
 }
 // vaciarCarrito ()
+
