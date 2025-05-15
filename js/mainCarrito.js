@@ -35,7 +35,7 @@ function renderProductos(productosArray) {
                                         <h4 class="card-title">${producto.nombre}</h4>
                                         <p class="card-text">${producto.descripcion}</p>
                                         <h4 class="card-title">$ ${producto.precio}.</h4>
-                                        <button class="btn btn-light" id="${producto.id}">Agregar</button>
+                                        <button class="my-button" id="${producto.id}">Agregar</button>
                                     </div>
                                 </div>
                             </article>`
@@ -47,7 +47,7 @@ renderProductos(productos)
 
 
 function agregarCarritoButton () {
-    const agregarButtones = document.querySelectorAll(".btn")
+    const agregarButtones = document.querySelectorAll(".my-button")
     agregarButtones.forEach(button => {
         button.onclick = (e) => {
             const productoId = parseInt(e.currentTarget.id)

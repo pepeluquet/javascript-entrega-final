@@ -32,6 +32,9 @@
 .navbar-brand .logo {
   height: 2em;
 }
+.navbar-brand .carrito {
+  width: 2em;
+}
 .navbar-brand .collapse .navbar-nav .nav-item .nav-link {
   padding-top: 18em;
 }
@@ -56,9 +59,7 @@
   color: #809671;
   font-weight: 650;
 }
-.navbar-brand .carrito {
-  height: 2em;
-}
+
 .portada .tracking-in-contract {
   animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   color: #725C3A;
@@ -195,6 +196,15 @@
   padding: 2em;
   margin: 2em;
   font-size: 1.2em;
+}
+.nucleo .articulos-container .col .card .my-button {
+  background-color: #809671;
+  color: #f8e1ce;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 .nucleo .carousel {
   background-color: #f8e1ce;
