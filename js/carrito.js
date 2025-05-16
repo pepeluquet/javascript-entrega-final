@@ -15,18 +15,20 @@ function renderCarrito(carritoItems) {
 
             totalGeneral += subtotal
 
-            carritoItemDiv.innerHTML = `
-                <h3>${producto.nombre}</h3>
-                <p>Precio: $${producto.precio}</p>
-                <p>Cantidad: ${producto.cantidad}</p>
-                <p>Subtotal: $${subtotal.toFixed(2)}</p>
-                <button class="btn-eliminar" data-id="${producto.id}">Eliminar</button>
-            ` 
+            carritoItemDiv.innerHTML = `<article class="card w-75 mb-3">
+                                            <div class="card-body">
+                                                <h4 class="card-header">${producto.nombre}</h4>
+                                                <p class="text">Precio: $${producto.precio}</p>
+                                                <p class="text">Cantidad: ${producto.cantidad}</p>
+                                                <p class="title">Subtotal: $${subtotal.toFixed(2)}</p>
+                                                <button class="btn-eliminar" data-id="${producto.id}">Eliminar</button>                          
+                                            </div>
+                                        </article>    ` 
             carritoContainer.appendChild(carritoItemDiv) 
         }
     })
     const totalDiv = document.createElement("div")
-    totalDiv.innerHTML = `<h3>Total de la compra: $${totalGeneral.toFixed(2)}</h3>`
+    totalDiv.innerHTML = `<h3 class="text-end">Total de la compra: $${totalGeneral.toFixed(2)}</h3>`
     carritoContainer.appendChild(totalDiv)
 
     const botonesEliminar = carritoContainer.querySelectorAll(".btn-eliminar")

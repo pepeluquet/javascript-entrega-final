@@ -3,21 +3,21 @@ const productos= [
         id: 1, 
         nombre: "Estiramientos dinámicos para atletas.", 
         descripcion: "Este libro se centra en los estiramientos dinámicos que son útiles para el rendimiento deportivo.",
-        precio: 12000,
+        precio: 12000.00,
         imagen : "./assets/foto2.webp"
     },
     {
         id: 2, 
         nombre: "Clases de Yoga y Stretching para hacer en sus casas", 
         descripcion: "8 videos con clases destinadas para realizar en la comodidad de sus casas y en el tiempo que deseen.",
-        precio: 20000,
+        precio: 20000.00,
         imagen : "./assets/foto3.webp"
     },
     {
         id: 3, 
         nombre: "Suscripción", 
         descripcion: "Suscripción mensual a clases en vivo.",
-        precio: 18000,
+        precio: 18000.00,
         imagen : "./assets/foto4.webp"
     },
 ]
@@ -66,6 +66,3 @@ function agregarCarritoButton () {
         }
     })
 }
-
-
-

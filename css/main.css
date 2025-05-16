@@ -109,6 +109,24 @@
   padding: 1em;
   font-size: 1.8em;
 }
+.portada .titulo-carrito {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8e1ce;
+  font-family: "monomakh";
+  text-align: center;
+  background-image: url(../assets/fotocarrito.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 30em;
+}
+.portada .titulo-carrito h3 {
+  color: #2A2A24;
+  font-family: "system-ui";
+  text-align: center;
+  padding: 1em;
+  font-size: 1.8em;
+}
 .portada .titulo-info {
   background-image: url(../assets/foto7.webp);
   display: flex;
@@ -198,6 +216,15 @@
   font-size: 1.2em;
 }
 .nucleo .articulos-container .col .card .my-button {
+  background-color: #809671;
+  color: #f8e1ce;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.nucleo .pre-compra .btn-eliminar {
   background-color: #809671;
   color: #f8e1ce;
   padding: 10px 20px;

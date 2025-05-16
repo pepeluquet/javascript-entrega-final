@@ -45,6 +45,17 @@
             }
         }
     }
+    .pre-compra {
+        .btn-eliminar {
+            background-color: map-get($color-bg , musgo-menu );
+            color: map-get($color-bg , white-titulo );
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    }
     .carousel {
         background-color: map-get($color-bg , white-titulo );
         background-position: center;
