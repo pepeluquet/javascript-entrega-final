@@ -33,10 +33,11 @@ function renderCarrito(carritoItems) {
     botonesEliminar.forEach(boton => {
         boton.addEventListener("click", (e) => {
             const productoIdAEliminar = parseInt(e.currentTarget.dataset.id)
-            carritoProductos = carritoProductos.filter(producto => producto.id !== productoIdAEliminar)
+            carritoStorage = carritoStorage.filter(producto => producto.id !== productoIdAEliminar)
 
-            localStorage.setItem("carritoProductos", JSON.stringify(carritoProductos))
-            renderCarrito(carritoProductos);
+            localStorage.setItem("carritoProductos", JSON.stringify(carritoStorage)) 
+            renderCarrito(carritoStorage)
+
         })
     })
 }
@@ -55,5 +56,5 @@ function vaciarCarrito () {
     renderCarrito(carritoStorage)
 
 }
-// vaciarCarrito ()
+
 

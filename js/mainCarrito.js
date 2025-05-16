@@ -15,8 +15,8 @@ const productos= [
     },
     {
         id: 3, 
-        nombre: "subscripcion", 
-        descripcion: "Subscripcion mensual a clases en vivo.",
+        nombre: "Suscripción", 
+        descripcion: "Suscripción mensual a clases en vivo.",
         precio: 18000,
         imagen : "./assets/foto4.webp"
     },
