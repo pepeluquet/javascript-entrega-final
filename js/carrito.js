@@ -1,12 +1,13 @@
 let carritoContainer = document.getElementById("carrito-section")
 let carritoStorage = localStorage.getItem("carritoProductos")
 
-carritoStorage = JSON.parse(carritoStorage) || [] 
 
+carritoStorage = JSON.parse(carritoStorage) || [] 
 
 function renderCarrito(carritoItems) { 
     carritoContainer.innerHTML = ""
     let totalGeneral = 0
+    let totalCuentaCarrito = 0
 
     carritoItems.forEach(producto => { 
         if (producto.cantidad > 0) { 
@@ -14,6 +15,8 @@ function renderCarrito(carritoItems) {
             const subtotal = producto.precio * producto.cantidad 
 
             totalGeneral += subtotal
+
+            totalCuentaCarrito += producto.cantidad
 
             carritoItemDiv.innerHTML = `<article class="card w-75 mb-3">
                                             <div class="card-body">
@@ -27,6 +30,7 @@ function renderCarrito(carritoItems) {
             carritoContainer.appendChild(carritoItemDiv) 
         }
     })
+    
     const totalDiv = document.createElement("div")
     totalDiv.innerHTML = `<h3 class="text-end">Total de la compra: $${totalGeneral.toFixed(2)}</h3>`
     carritoContainer.appendChild(totalDiv)
@@ -43,6 +47,8 @@ function renderCarrito(carritoItems) {
         })
     })
 }
+
+
 
 renderCarrito(carritoStorage)
 
