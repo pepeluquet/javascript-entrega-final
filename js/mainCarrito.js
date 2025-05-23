@@ -95,9 +95,9 @@ function agregarCarritoButton () {
             }
 
             localStorage.setItem("carritoProductos", JSON.stringify(carritoProductos))
-            renderCarrito()
+            
             actualizarCuentaCarrito()
-
+            renderCarrito()
 
             // Opcional: Mostrar una notificación (por ejemplo, usando una librería como Toastify, mencionada en otros archivos aunque no de carrito)
             // Toastify({

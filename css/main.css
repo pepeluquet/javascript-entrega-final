@@ -225,8 +225,12 @@
   font-size: 16px;
 }
 .nucleo .articulos-container .col .card .my-button:active {
-  background-color: #4CAF50;
-  opacity: 0.5;
+  background-color: #607750;
+  opacity: 0.7;
+}
+.nucleo .articulos-container .col .card .my-button:hover {
+  background-color: #607750;
+  opacity: 0.7;
 }
 .nucleo .pre-compra .btn-eliminar {
   background-color: #809671;
@@ -236,6 +240,14 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+}
+.nucleo .pre-compra .btn-eliminar:active {
+  background-color: #607750;
+  opacity: 0.7;
+}
+.nucleo .pre-compra .btn-eliminar:hover {
+  background-color: #607750;
+  opacity: 0.7;
 }
 .nucleo .carousel {
   background-color: #f8e1ce;
