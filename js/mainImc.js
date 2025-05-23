@@ -11,6 +11,8 @@ function calculateIMC() {
     let peso = document.getElementById("idPeso").value;
     let altura = document.getElementById("idAltura").value;
 
+    let aviso = ""
+
     const resultadoImc = indiceMC(peso, altura);
 
     if (resultadoImc < 18.5) {

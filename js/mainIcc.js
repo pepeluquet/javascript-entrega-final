@@ -15,6 +15,8 @@ function calculateICC() {
 
     const resultadoIcc = indiceCC(cintura, cadera);
     
+    let aviso = ""
+
     if (sexo == "m"){
         if (resultadoIcc < 0.89) {
             aviso = "Tienes un indice cintura/cadera de BAJO RIESGO";
