@@ -55,12 +55,10 @@ function renderCarrito() {
     agregarEliminarButton()
 }
 
-
 function agregarCarritoButton () {
     const agregarButtones = document.querySelectorAll(".my-button") 
     agregarButtones.forEach(button => {
         button.onclick = (e) => {
-            console.log("Botón agregar clickeado")
             const productoId = parseInt(e.currentTarget.id)
             const seleccionProductos = productos.find(producto => producto.id === productoId)
             const productoExistente = carritoProductos.find(item => item.id === productoId)
@@ -75,23 +73,17 @@ function agregarCarritoButton () {
             localStorage.setItem("carritoProductos", JSON.stringify(carritoProductos))
             
             actualizarCuentaCarrito()
-            renderCarrito()
 
-            // Opcional: Mostrar una notificación (por ejemplo, usando una librería como Toastify, mencionada en otros archivos aunque no de carrito)
-            // Toastify({
-            //     text: `"${seleccionProductos.nombre}" añadido al carrito`,
-            //     duration: 2000,
-            //     gravity: "bottom",
-            //     position: "right",
-            //     style: { background: "linear-gradient(to right, #00b09b, #96c93d)" }
-            // }).showToast();
-
-            // Si estás en la página del carrito y añades desde ahí (aunque el diseño sugiere que agregas desde index.html), podrías querer refrescar la vista del carrito:
-
+            Toastify({
+                text: `"${seleccionProductos.nombre}" añadido al carrito`,
+                duration: 2000,
+                gravity: "bottom",
+                position: "right",
+                style: { background: "linear-gradient(to right, #00b09b, #96c93d)" }
+            }).showToast()
         }
     })
 }
-
 
 function agregarEliminarButton() {
     const carritoContainer = document.getElementById("carrito-section")
@@ -121,6 +113,13 @@ if (vaciarCarritoButton) {
     vaciarCarritoButton.addEventListener("click", vaciarCarrito)
 }
 
+function actualizarCuentaCarrito() {
+    const cuentaCarrito = document.getElementById("cuenta-carrito");
+    if (cuentaCarrito) {
+        const total = carritoProductos.reduce((sum, item) => sum + item.cantidad, 0)
+        cuentaCarrito.textContent = total
+    }
+}
 
 fetch("../db/data.json")
     .then(response => response.json())
@@ -135,11 +134,3 @@ fetch("../db/data.json")
             actualizarCuentaCarrito()
         }
     })
-
-function actualizarCuentaCarrito() {
-    const cuentaCarrito = document.getElementById("cuenta-carrito");
-    if (cuentaCarrito) {
-        const total = carritoProductos.reduce((sum, item) => sum + item.cantidad, 0)
-        cuentaCarrito.textContent = total
-    }
-}
