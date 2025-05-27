@@ -1,47 +1,57 @@
-const productos = [
-    {
-        id: 1,
-        nombre: "Estiramientos dinámicos para atletas.",
-        descripcion: "Este libro se centra en los estiramientos dinámicos que son útiles para el rendimiento deportivo.",
-        precio: 12000.00,
-        imagen: "./assets/foto2.webp"
-    },
-    {
-        id: 2,
-        nombre: "Clases de Yoga y Stretching para hacer en sus casas",
-        descripcion: "8 videos con clases destinadas para realizar en la comodidad de sus casas y en el tiempo que deseen.",
-        precio: 20000.00,
-        imagen: "./assets/foto3.webp"
-    },
-    {
-        id: 3,
-        nombre: "Suscripción",
-        descripcion: "Suscripción mensual a clases en vivo.",
-        precio: 18000.00,
-        imagen: "./assets/foto4.webp"
-    },
-]
+// let productos = [] 
 
+// const productos = [
+//     {
+//         id: 1,
+//         nombre: "Estiramientos dinámicos para atletas.",
+//         descripcion: "Este libro se centra en los estiramientos dinámicos que son útiles para el rendimiento deportivo.",
+//         precio: 12000.00,
+//         imagen: "./assets/foto2.webp"
+//     },
+//     {
+//         id: 2,
+//         nombre: "Clases de Yoga y Stretching para hacer en sus casas",
+//         descripcion: "8 videos con clases destinadas para realizar en la comodidad de sus casas y en el tiempo que deseen.",
+//         precio: 20000.00,
+//         imagen: "./assets/foto3.webp"
+//     },
+//     {
+//         id: 3,
+//         nombre: "Suscripción",
+//         descripcion: "Suscripción mensual a clases en vivo.",
+//         precio: 18000.00,
+//         imagen: "./assets/foto4.webp"
+//     },
+// ]
 let carritoProductos = JSON.parse(localStorage.getItem("carritoProductos")) || []
+
 
 function renderProductos() {
     const productosContainer = document.getElementById("productos-container")
-    productos.forEach(producto => {
-        const card = document.createElement("div")
-        card.innerHTML = `  <article class="col">
-                            <div class="card">
-                                <img src=${producto.imagen} class="articulo">
-                                <div class="card-img-overlay">
-                                    <h4 class="card-title">${producto.nombre}</h4>
-                                    <p class="card-text">${producto.descripcion}</p>
-                                    <h4 class="card-title">$ ${producto.precio}.</h4>
-                                    <button class="my-button" id="${producto.id}">Agregar</button>
+    let productos = [] 
+    fetch(`./db/data.json`)
+    .then(response => response.json())
+    .then(data => {
+        productos = data
+        productos.forEach(producto => {
+            const card = document.createElement("div")
+            card.innerHTML = `  <article class="col">
+                                <div class="card">
+                                    <img src=${producto.imagen} class="articulo">
+                                    <div class="card-img-overlay">
+                                        <h4 class="card-title">${producto.nombre}</h4>
+                                        <p class="card-text">${producto.descripcion}</p>
+                                        <h4 class="card-title">$ ${producto.precio}.</h4>
+                                        <button class="my-button" id="${producto.id}">Agregar</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </article>`
-        productosContainer.appendChild(card)
+                            </article>`
+            productosContainer.appendChild(card)
+        })
+        agregarCarritoButton()
     })
-    agregarCarritoButton()
+    
+    // agregarCarritoButton()
 }
 
 function renderCarrito() {

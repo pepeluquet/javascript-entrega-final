@@ -6,6 +6,7 @@ indiceMC = (a, b) => {
 const botonesCalculateIMC = document.querySelector("#btn-calcular-imc")
 
 botonesCalculateIMC.addEventListener( "click", calculateIMC)
+    
 
 function calculateIMC() {
     let peso = document.getElementById("idPeso").value;
@@ -25,5 +26,7 @@ function calculateIMC() {
         aviso = "Tienes un indice de masa corporal OBESIDAD"
     };
 
+    // const Swal = require('sweetalert2')
+    // Swal.fire(aviso);
     document.querySelector("#resultadoImc").innerHTML = `Usted posee un IMC de ${Number.parseFloat(resultadoImc).toFixed(2)} \n ${aviso}`;
 }
