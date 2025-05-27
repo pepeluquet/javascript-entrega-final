@@ -4,6 +4,7 @@ let carritoProductos = JSON.parse(localStorage.getItem("carritoProductos")) || [
 
 function renderProductos() {
     const productosContainer = document.getElementById("productos-container")
+    productosContainer.innerHTML = ""
 
     productos.forEach(producto => {
         const card = document.createElement("div")
@@ -19,8 +20,8 @@ function renderProductos() {
                             </div>
                         </article>`
         productosContainer.appendChild(card)
-    })
-    agregarCarritoButton()
+    });
+    agregarCarritoButton();
 }
 
 function renderCarrito() {
