@@ -37,5 +37,13 @@ function calculateICC() {
         aviso ="El dato del sexo era necesario para el resultado del ICC"
     };
 
-    document.querySelector("#resultadoIcc").innerHTML = `Usted posee un ICC de ${Number.parseFloat(resultadoIcc).toFixed(2)} \n ${aviso}`;
+    const mensaje = `Usted posee un ICC de ${Number.parseFloat(resultadoIcc).toFixed(2)} \n ${aviso}`;
+
+    Toastify({
+        text: mensaje,
+        duration: 4000,
+        gravity: "top",
+        position: "right",
+        style: { background: "linear-gradient(to right, #00b09b, #96c93d)" }
+    }).showToast();
 }
