@@ -79,7 +79,7 @@ function agregarCarritoButton () {
             Toastify({
                 text: `"${seleccionProductos.nombre}" añadido al carrito`,
                 duration: 3000,
-                gravity: "top",
+                gravity: "bottom",
                 position: "right",
                 style: { background: "linear-gradient(to right,rgb(128, 160, 52), #96e6a1)" }
             }).showToast()
