@@ -4,28 +4,23 @@ let carritoProductos = JSON.parse(localStorage.getItem("carritoProductos")) || [
 
 function renderProductos() {
     const productosContainer = document.getElementById("productos-container")
-    let productos = [] 
-    fetch(`./db/data.json`)
-    .then(response => response.json())
-    .then(data => {
-        productos = data
-        productos.forEach(producto => {
-            const card = document.createElement("div")
-            card.innerHTML = `  <article class="col">
-                                <div class="card">
-                                    <img src=${producto.imagen} class="articulo">
-                                    <div class="card-img-overlay">
-                                        <h4 class="card-title">${producto.nombre}</h4>
-                                        <p class="card-text">${producto.descripcion}</p>
-                                        <h4 class="card-title">$ ${producto.precio}.</h4>
-                                        <button class="my-button" id="${producto.id}">Agregar</button>
-                                    </div>
+
+    productos.forEach(producto => {
+        const card = document.createElement("div")
+        card.innerHTML = `  <article class="col">
+                            <div class="card">
+                                <img src=${producto.imagen} class="articulo">
+                                <div class="card-img-overlay">
+                                    <h4 class="card-title">${producto.nombre}</h4>
+                                    <p class="card-text">${producto.descripcion}</p>
+                                    <h4 class="card-title">$ ${producto.precio}.</h4>
+                                    <button class="my-button" id="${producto.id}">Agregar</button>
                                 </div>
-                            </article>`
-            productosContainer.appendChild(card)
-        })
-        agregarCarritoButton()
+                            </div>
+                        </article>`
+        productosContainer.appendChild(card)
     })
+    agregarCarritoButton()
 }
 
 function renderCarrito() {
