@@ -123,7 +123,7 @@ function actualizarCuentaCarrito() {
     }
 }
 
-fetch("../db/data.json")
+fetch("./db/data.json")
     .then(response => response.json())
     .then(data => {
         productos = data
