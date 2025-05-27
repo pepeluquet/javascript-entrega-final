@@ -1,29 +1,6 @@
-const productos = [
-    {
-        id: 1,
-        nombre: "Estiramientos dinámicos para atletas.",
-        descripcion: "Este libro se centra en los estiramientos dinámicos que son útiles para el rendimiento deportivo.",
-        precio: 12000.00,
-        imagen: "./assets/foto2.webp"
-    },
-    {
-        id: 2,
-        nombre: "Clases de Yoga y Stretching para hacer en sus casas",
-        descripcion: "8 videos con clases destinadas para realizar en la comodidad de sus casas y en el tiempo que deseen.",
-        precio: 20000.00,
-        imagen: "./assets/foto3.webp"
-    },
-    {
-        id: 3,
-        nombre: "Suscripción",
-        descripcion: "Suscripción mensual a clases en vivo.",
-        precio: 18000.00,
-        imagen: "./assets/foto4.webp"
-    },
-]
+let productos = []
 
 let carritoProductos = JSON.parse(localStorage.getItem("carritoProductos")) || []
-
 
 function renderProductos() {
     const productosContainer = document.getElementById("productos-container")
@@ -49,8 +26,6 @@ function renderProductos() {
         })
         agregarCarritoButton()
     })
-    
-    // agregarCarritoButton()
 }
 
 function renderCarrito() {
@@ -107,10 +82,10 @@ function agregarCarritoButton () {
 
             Toastify({
                 text: `"${seleccionProductos.nombre}" añadido al carrito`,
-                duration: 2000,
-                gravity: "bottom",
-                position: "right",
-                style: { background: "linear-gradient(to right, #00b09b, #96c93d)" }
+                duration: 3000,
+                gravity: "top",
+                position: "center",
+                style: { background: "linear-gradient(to right, #b7f8db, #f5f7fa)" }
             }).showToast()
         }
     })
