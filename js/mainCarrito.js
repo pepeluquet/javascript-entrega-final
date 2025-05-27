@@ -80,8 +80,8 @@ function agregarCarritoButton () {
                 text: `"${seleccionProductos.nombre}" añadido al carrito`,
                 duration: 3000,
                 gravity: "top",
-                position: "center",
-                style: { background: "linear-gradient(to right, #b7f8db, #f5f7fa)" }
+                position: "right",
+                style: { background: "linear-gradient(to right,rgb(128, 160, 52), #96e6a1)" }
             }).showToast()
         }
     })
@@ -131,6 +131,12 @@ fetch("./db/data.json")
             renderProductos()
             actualizarCuentaCarrito()
         }
+    })
+
+fetch("../db/data.json")
+    .then(response => response.json())
+    .then(data => {
+        productos = data
         if (document.getElementById("carrito-section")) {
             renderCarrito()
             actualizarCuentaCarrito()
