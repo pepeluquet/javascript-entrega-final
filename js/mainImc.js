@@ -26,7 +26,13 @@ function calculateIMC() {
         aviso = "Tienes un indice de masa corporal OBESIDAD"
     };
 
-    // const Swal = require('sweetalert2')
-    // Swal.fire(aviso);
-    document.querySelector("#resultadoImc").innerHTML = `Usted posee un IMC de ${Number.parseFloat(resultadoImc).toFixed(2)} \n ${aviso}`;
+   const mensaje = `Usted posee un IMC de ${Number.parseFloat(resultadoImc).toFixed(2)} \n ${aviso}`;
+
+    Toastify({
+        text: mensaje,
+        duration: 4000,
+        gravity: "top",
+        position: "right",
+        style: { background: "linear-gradient(to right, #00b09b, #96c93d)" }
+    }).showToast();
 }
