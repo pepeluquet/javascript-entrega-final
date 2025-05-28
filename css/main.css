@@ -224,11 +224,36 @@
   cursor: pointer;
   font-size: 16px;
 }
+.nucleo .articulos-container .col .card .my-button .a {
+  color: #f8e1ce;
+  text-decoration: none;
+}
 .nucleo .articulos-container .col .card .my-button:active {
   background-color: #607750;
   opacity: 0.7;
 }
 .nucleo .articulos-container .col .card .my-button:hover {
+  background-color: #607750;
+  opacity: 0.7;
+}
+.nucleo .my-button {
+  background-color: #809671;
+  color: #f8e1ce;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.nucleo .my-button .a {
+  color: #f8e1ce;
+  text-decoration: none;
+}
+.nucleo .my-button:active {
+  background-color: #607750;
+  opacity: 0.7;
+}
+.nucleo .my-button:hover {
   background-color: #607750;
   opacity: 0.7;
 }
