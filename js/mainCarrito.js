@@ -126,19 +126,39 @@ function actualizarCuentaCarrito() {
 fetch("./db/data.json")
     .then(response => response.json())
     .then(data => {
-        productos = data
-        if (document.getElementById("productos-container")) {
-            renderProductos()
-            actualizarCuentaCarrito()
+        try {
+            productos = data;
+            if (document.getElementById("productos-container")) {
+                renderProductos()
+                actualizarCuentaCarrito()
+            }
+        } catch (error) {
+            Toastify({
+                text: "Error al procesar los productos",
+                duration: 3000,
+                gravity: "bottom",
+                position: "right",
+                style: { background: "linear-gradient(to right, #ff5858, #f09819)" }
+            }).showToast()
         }
     })
 
 fetch("../db/data.json")
     .then(response => response.json())
     .then(data => {
-        productos = data
-        if (document.getElementById("carrito-section")) {
-            renderCarrito()
-            actualizarCuentaCarrito()
+        try {
+            productos = data;
+            if (document.getElementById("carrito-section")) {
+                renderCarrito()
+                actualizarCuentaCarrito()
+            }
+        } catch (error) {
+            Toastify({
+                text: "Error al procesar los productos",
+                duration: 3000,
+                gravity: "bottom",
+                position: "right",
+                style: { background: "linear-gradient(to right, #ff5858, #f09819)" }
+            }).showToast()
         }
     })
