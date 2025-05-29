@@ -17,6 +17,14 @@ Una vez ingresados los datos, el simulador calcula y muestra:
 *   **El valor del IMC**, junto con una **interpretación del resultado** (bajo peso, normal, sobrepeso, obesidad).
 *   **El valor del ICC**, junto con una **clasificación de riesgo** (bajo, moderado, alto) basada en el sexo del usuario.
 
+## Funcionalidades agregadas
+
+- **Carrito de compras:** permite agregar productos, eliminarlos, vaciar el carrito y ver el total. El carrito persiste usando `localStorage`.
+- **Productos:** los productos se cargan dinámicamente desde un archivo `data.json` y se renderizan en la interfaz.
+- **Método de pago:** se agregó un formulario para finalizar la compra, donde el usuario ingresa sus datos personales y de pago.
+- **Notificaciones:** se utilizan Toastify y SweetAlert para mostrar mensajes y avisos al usuario.
+
+> **Nota:** La validación de los datos de la tarjeta de crédito aún no ha sido implementada. Actualmente, el formulario de pago solo valida que los campos no estén vacíos.
 
 ## Notas
 
