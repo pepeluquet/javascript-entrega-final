@@ -49,7 +49,109 @@
                     <h1 class="tracking-in-contract">Finalizar compra</h1>
                 </div>       
             </header>        
-            <main class="nucleo grid-setter">   
+            <main class="nucleo grid-setter">  
+                <div class="container">
+                    <form id="checkoutForm">
+                        <h2>Datos del Comprador</h2>
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                            <div class="error-message" id="errorNombre"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" id="apellido" name="apellido" required>
+                            <div class="error-message" id="errorApellido"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="error-message" id="errorEmail"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="celular">Celular:</label>
+                            <input type="tel" id="celular" name="celular" placeholder="Ej: 1123456789" required>
+                            <div class="error-message" id="errorCelular"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ciudad">Ciudad:</label>
+                            <input type="text" id="ciudad" name="ciudad">
+                        </div>
+                        <div class="form-group">
+                            <label for="provincia">Provincia:</label>
+                            <input type="text" id="provincia" name="provincia">
+                        </div>
+
+                        <h2>Formas de Pago</h2>
+                        <div class="form-group payment-options">
+                            <input type="radio" id="pagoDebito" name="formaPago" value="debito" checked>
+                            <label for="pagoDebito">Tarjeta de Débito</label><br>
+
+                            <input type="radio" id="pagoCredito" name="formaPago" value="credito">
+                            <label for="pagoCredito">Tarjeta de Crédito</label><br>
+
+                            <input type="radio" id="pagoMercadoPago" name="formaPago" value="mercadoPago">
+                            <label for="pagoMercadoPago">Mercado Pago</label>
+                        </div>
+
+                        <div id="debitoCreditoDetails" class="payment-details">
+                            <h3>Datos de la Tarjeta</h3>
+                            <div class="form-group">
+                                <label for="numeroTarjeta">Número de Tarjeta:</label>
+                                <input type="text" id="numeroTarjeta" name="numeroTarjeta" placeholder="XXXX XXXX XXXX XXXX" maxlength="19">
+                                <div class="error-message" id="errorNumeroTarjeta"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="nombreTitular">Nombre del Titular (como aparece en la tarjeta):</label>
+                                <input type="text" id="nombreTitular" name="nombreTitular">
+                                <div class="error-message" id="errorNombreTitular"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="vencimientoMes">Fecha de Vencimiento:</label>
+                                <select id="vencimientoMes" name="vencimientoMes">
+                                    <option value="">Mes</option>
+                                    <option value="01">01 - Enero</option>
+                                    <option value="02">02 - Febrero</option>
+                                    <option value="03">03 - Marzo</option>
+                                    <option value="04">04 - Abril</option>
+                                    <option value="05">05 - Mayo</option>
+                                    <option value="06">06 - Junio</option>
+                                    <option value="07">07 - Julio</option>
+                                    <option value="08">08 - Agosto</option>
+                                    <option value="09">09 - Septiembre</option>
+                                    <option value="10">10 - Octubre</option>
+                                    <option value="11">11 - Noviembre</option>
+                                    <option value="12">12 - Diciembre</option>
+                                </select>
+                                <select id="vencimientoAnio" name="vencimientoAnio">
+                                    <option value="">Año</option>
+                                    </select>
+                                <div class="error-message" id="errorVencimiento"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">Código de Seguridad (CVV):</label>
+                                <input type="text" id="cvv" name="cvv" maxlength="4">
+                                <div class="error-message" id="errorCvv"></div>
+                            </div>
+                            <div class="form-group" id="cuotasGroup">
+                                <label for="cuotas">Cuotas:</label>
+                                <select id="cuotas" name="cuotas">
+                                    <option value="1">1 cuota</option>
+                                    <option value="3">3 cuotas</option>
+                                    <option value="6">6 cuotas</option>
+                                    <option value="9">9 cuotas</option>
+                                    <option value="12">12 cuotas</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="mercadoPagoDetails" class="payment-details hidden">
+                            <h3>Pago con Mercado Pago</h3>
+                            <p>Al hacer click en "Finalizar Compra", serás redirigido a la plataforma de Mercado Pago para completar el pago.</p>
+                            </div>
+                        <button type="submit">Finalizar Compra</button>
+                    </form>
+                </div> 
+                <hr>
                 <section class="pre-compra">                    
                     <div id="carrito-section"></div>
                     <ul id="carrito" class="list-group"></ul>
@@ -59,6 +161,7 @@
                 </section>
                 <hr>               
                 <a class="my-button btn btn-primary" href="../index.html">Volver a Página Principal</a>
+                <hr>
             </main>               
             <footer class="final grid-setter">
                 <!-- links de redes, logo y sub-menu de navegacion  -->    
