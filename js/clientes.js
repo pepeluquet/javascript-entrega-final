@@ -41,6 +41,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 text: 'Compra realizada con éxito. Gracias por su compra.',
                 showConfirmButton: true,
                 confirmButtonColor: '#43cea2'
+            }).then(() => {
+                const datos = JSON.parse(localStorage.getItem("datosCliente"))
+                const resumen = `
+                    <b>Nombre:</b> ${datos.nombre}<br>
+                    <b>Apellido:</b> ${datos.apellido}<br>
+                    <b>Email:</b> ${datos.email}<br>
+                    <b>Celular:</b> ${datos.celular}<br>
+                    <b>Ciudad:</b> ${datos.ciudad}<br>
+                    <b>Provincia:</b> ${datos.provincia}<br>
+                    <b>Forma de pago:</b> ${datos.formaPago}
+                `
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Resumen de compra',
+                    html: resumen,
+                    showConfirmButton: true,
+                    confirmButtonColor: '#43cea2'
+                })
             })
             
         })
