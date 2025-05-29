@@ -27,12 +27,5 @@ function calculateIMC() {
     };
 
    const mensaje = `Usted posee un IMC de ${Number.parseFloat(resultadoImc).toFixed(2)} \n ${aviso}`;
-
-    Toastify({
-        text: mensaje,
-        duration: 4000,
-        gravity: "top",
-        position: "right",
-        style: { background: "linear-gradient(to right, #00b09b, #96c93d)" }
-    }).showToast();
+   Swal.fire(mensaje)
 }
